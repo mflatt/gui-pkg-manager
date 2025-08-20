@@ -1,7 +1,12 @@
 #lang scribble/manual
 @(require scribble/bnf
           scribble/core
-          (for-label pkg racket/base))
+          (for-label pkg
+                     pkg/lib
+                     pkg/gui
+                     racket/base
+                     racket/contract/base
+                     racket/gui/base))
 
 @title{Package Management GUI Libraries}
 
@@ -9,9 +14,9 @@
         @author+email["Jay McCarthy" "jay@racket-lang.org"]
         @author+email["Robert Bruce Findler" "robby@racket-lang.org"]]
 
-@declare-exporting[pkg/gui]
+@defmodule[pkg/gui]
 
-The @tt{gui-pkg-manager} provides GUI support for package management.
+The @racketmodname[pkg/gui] module provides GUI support for package management.
 
 @defproc[(make-pkg-gui
           [#:wrap-terminal-action wrap-terminal-action (-> (-> any) any) (λ (t) (t))]
